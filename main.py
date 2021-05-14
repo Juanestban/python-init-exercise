@@ -1,49 +1,15 @@
 # -*- coding: utf-8 -*-
+from exercises import Exercises
+# for anothers implements [comming soon]
+# import os
 
-class Exercise1:
+
+class Imterface:
     switchOnOff = True
+    exercises = Exercises()
 
     def division(self):
         print('-' * 120)
-
-    # first exercise
-    def getFistEx(self, *ex1Param):
-        print(ex1Param)
-        pass
-
-    def ex1(self):
-        self.getFistEx(1, 2, 3)
-        pass
-
-    # second exercise
-    def ex2(self):
-        print('ex2')
-        pass
-
-    # thercy exercise
-    def ex3(self):
-        print('ex3')
-        pass
-
-    # quanty exercise
-    def ex4(self):
-        print('ex4')
-        pass
-
-    # fifty exercise
-    def ex5(self):
-        print('ex5')
-        pass
-
-    # sexty exercise
-    def ex6(self):
-        print('ex6')
-        pass
-
-    # seventy exercise
-    def ex7(self):
-        print('ex7')
-        pass
 
     def initFun(self):
         print('\nHello, this is a new interface in terminal')
@@ -56,13 +22,13 @@ class Exercise1:
     def switchEx(self):
         val = int(input('what is the exercise that you with resolve?:\n'))
         switcher = {
-            1: self.ex1,
-            2: self.ex2,
-            3: self.ex3,
-            4: self.ex4,
-            5: self.ex5,
-            6: self.ex6,
-            7: self.ex7,
+            1: self.exercises.ex1,
+            2: self.exercises.ex2,
+            3: self.exercises.ex3,
+            4: self.exercises.ex4,
+            5: self.exercises.ex5,
+            6: self.exercises.ex6,
+            7: self.exercises.ex7,
         }
 
         switcher.get(val, 'Invalid exercise!')()
@@ -77,9 +43,9 @@ class Exercise1:
             self.switchOnOff = False
 
 
-exercise = Exercise1()
+interface = Imterface()
 
-while(exercise.switchOnOff):
-    exercise.initFun()
-    exercise.switchEx()
-    exercise.offClass()
+while(interface.switchOnOff):
+    interface.initFun()
+    interface.switchEx()
+    interface.offClass()

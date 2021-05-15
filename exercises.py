@@ -29,8 +29,8 @@ class Exercises:
 
             self.division()
             if (xInMajor and xInMinor) == 0:
-                return print('response: x=%4.3f' % xInMajor)
-            return print('response: xInMajor=%4.3f and xInMinor=%4.3f' % (xInMajor, xInMinor))
+                return print(ColorsStatus.OKGREEN + 'response: x=%4.3f' % xInMajor + ColorsStatus.ENDC)
+            return print(ColorsStatus.OKGREEN + 'response: xInMajor=%4.3f and xInMinor=%4.3f' % (xInMajor, xInMinor) + ColorsStatus.ENDC)
         except ZeroDivisionError:
             isError = True
             msg = 'in operation, you input value 1 like \'0\' and the operation has not resolve the division by zero'
@@ -55,9 +55,29 @@ class Exercises:
         self.secondGradeEx()
 
     # second exercise
+    def formatTextGetter(self, text):
+        return str(text).lower().replace(' ', '')
+
     def ex2(self):
-        print('ex2')
-        pass
+        msg = 'Digit your palindrome:\n'
+
+        self.division()
+        newText = str(self.formatTextGetter(input(msg)))
+        inverseText = newText[::-1]
+        if newText == inverseText:
+            msg = 'the text is palindrome: [compare]'
+            print(ColorsStatus.OKGREEN + msg + ColorsStatus.ENDC)
+            print('text before:',
+                  ColorsStatus.OKGREEN + newText + ColorsStatus.ENDC)
+            print('text after:',
+                  ColorsStatus.OKGREEN + inverseText + ColorsStatus.ENDC)
+            return
+        msg = 'the text isn\'t a palindrome: [compare]'
+        print(msg)
+        print('text before:',
+              ColorsStatus.FAIL + newText + ColorsStatus.ENDC)
+        print('text after:',
+              ColorsStatus.FAIL + inverseText + ColorsStatus.ENDC)
 
     # thercy exercise
     def ex3(self):

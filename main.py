@@ -45,6 +45,10 @@ class Imterface:
 
         if value == 'Y':
             self.switchOnOff = False
+            self.msgExit()
+
+    def msgExit(self):
+        print(ColorsStatus.OKGREEN + 'Exit, bye user ;3\n' + ColorsStatus.ENDC)
 
 
 interface = Imterface()
@@ -56,7 +60,7 @@ while(interface.switchOnOff):
         interface.offClass()
     except KeyboardInterrupt:
         interface.division()
-        print(ColorsStatus.OKGREEN + 'Exit, bye user ;3\n' + ColorsStatus.ENDC)
+        interface.msgExit()
         exit()
     except TypeError:
         interface.division()

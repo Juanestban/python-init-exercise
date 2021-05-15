@@ -81,8 +81,12 @@ class Exercises:
 
     # thercy exercise
     def ex3(self):
-        print('ex3')
-        pass
+        numbers = {}
+        for x in range(10):
+            x += 1
+            numbers.setdefault(x, x**2)
+        self.division()
+        print(numbers)
 
     # quanty exercise
     def ex4(self):

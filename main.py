@@ -64,7 +64,7 @@ while(interface.switchOnOff):
         exit()
     except TypeError:
         interface.division()
-        msg = 'type of error when try input an string or number in your expected'
+        msg = 'type of error when operation or function is invalid for any specified data type'
         print(ColorsStatus.WARNING + msg + ColorsStatus.ENDC)
     except ValueError:
         interface.division()

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from exercises import Exercises
+from colorsStatus import ColorsStatus
 # for anothers implements [comming soon]
 # import os
 
@@ -12,7 +13,10 @@ class Imterface:
         print('-' * 120)
 
     def initFun(self):
-        print('\nHello, this is a new interface in terminal')
+        print(ColorsStatus.OKBLUE +
+              '\nHello, this is a new interface in terminal'
+              + ColorsStatus.ENDC
+              )
         text = ''
         for x in range(7):
             text += '[{:x}] exercise\n'.format(x + 1)
@@ -35,17 +39,30 @@ class Imterface:
         self.division()
 
     def offClass(self):
-        msg = 'Deseas terminar la operación: [Si: S] [No: N]\n'
+        msg = 'are you wish finish the operation?: [Yes: Y] [No: N]\n'
         value = str(input(msg))
         self.division()
 
-        if value == 'S':
+        if value == 'Y':
             self.switchOnOff = False
 
 
 interface = Imterface()
 
 while(interface.switchOnOff):
-    interface.initFun()
-    interface.switchEx()
-    interface.offClass()
+    try:
+        interface.initFun()
+        interface.switchEx()
+        interface.offClass()
+    except KeyboardInterrupt:
+        interface.division()
+        print(ColorsStatus.OKGREEN + 'Exit, bye user ;3\n' + ColorsStatus.ENDC)
+        exit()
+    except TypeError:
+        interface.division()
+        msg = 'type of error when try input an string or number in your expected'
+        print(ColorsStatus.WARNING + msg + ColorsStatus.ENDC)
+    except ValueError:
+        interface.division()
+        msg = 'type of error when try input an string or number in your expected'
+        print(ColorsStatus.WARNING + msg + ColorsStatus.ENDC)

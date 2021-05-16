@@ -4,6 +4,36 @@ from colorsStatus import ColorsStatus
 
 
 class Exercises:
+    # dictionary of code morse
+    dic = {
+        'a': '•\u2013',
+        'b': '\u2013•••',
+        'c': '\u2013•\u2013•',
+        'd': '\u2013••',
+        'e': '•',
+        'f': '••\u2013•',
+        'g': '\u2013\u2013•',
+        'h': '••••',
+        'i': '••',
+        'j': '•\u2013\u2013\u2013',
+        'k': '\u2013•\u2013',
+        'l': '•\u2013••',
+        'm': '\u2013\u2013',
+        'n': '\u2013•',
+        'ñ': '\u2013\u2013•\u2013\u2013',
+        'o': '\u2013\u2013\u2013',
+        'p': '•\u2013\u2013•',
+        'q': '\u2013\u2013•\u2013\u2013',
+        'r': '•\u2013•',
+        's': '•••',
+        't': '\u2013',
+        'u': '••\u2013',
+        'v': '•••\u2013',
+        'w': '•\u2013\u2013',
+        'x': '\u2013••\u2013',
+        'y': '\u2013•\u2013\u2013',
+        'z': '\u2013\u2013••',
+    }
 
     def division(self):
         print('-' * 120)
@@ -89,14 +119,44 @@ class Exercises:
         print(numbers)
 
     # quanty exercise
+
     def ex4(self):
-        print('ex4')
-        pass
+        self.division()
+        val = str(input('digit the text for transform in code morse:\n'))
+        finalVal = ''
+        for x in range(val.__len__()):
+            finalVal += self.dic[val[x]]
+        print(finalVal)
 
     # fifty exercise
     def ex5(self):
-        print('ex5')
-        pass
+        key1 = {'pass': 1234}
+        key2 = {'pass': 4321}
+        x = 1
+
+        self.division()
+        print('[1]: key1 || [2]: key2\n')
+        op = int(input('Digit the option that you wish: '))
+        if op == 1:
+            op2 = int(input(
+                '\nAre you wish know the key1 or add other to object? [1]: add || [2]: know\n'))
+            if op2 == 1:
+                val = str(input('digit the value: '))
+                key1.setdefault('pass{:x}'.format(x), val)
+                x += 1
+                print(ColorsStatus.OKGREEN + key1 + ColorsStatus.ENDC)
+            else:
+                print(ColorsStatus.OKGREEN + key1 + ColorsStatus.ENDC)
+        else:
+            op2 = int(input(
+                '\nAre you wish know the key2 or add other to object? [1]: add || [2]: know\n'))
+            if op2 == 1:
+                val = str(input('digit the value: '))
+                key2.setdefault('pass{:x}'.format(x), val)
+                x += 1
+                print(ColorsStatus.OKGREEN + key2 + ColorsStatus.ENDC)
+            else:
+                print(ColorsStatus.OKGREEN + key2 + ColorsStatus.ENDC)
 
     # sexty exercise
     def ex6(self):

@@ -24,7 +24,8 @@ class Imterface:
         print(text)
 
     def switchEx(self):
-        val = int(input('what is the exercise that you with resolve?:\n'))
+        val = int(
+            input('what is the exercise that you wish resolve?: [digit the number]\n'))
         switcher = {
             1: self.exercises.ex1,
             2: self.exercises.ex2,

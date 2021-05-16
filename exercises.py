@@ -188,5 +188,6 @@ class Exercises:
 
     # seventy exercise
     def ex7(self):
-        print('ex7')
-        pass
+        self.division()
+        text = str(input('Digit the sentence will format:\n'))
+        print(text.title())

@@ -160,8 +160,31 @@ class Exercises:
 
     # sexty exercise
     def ex6(self):
-        print('ex6')
-        pass
+        notPrimes = []
+        msgTrue = '\nThis number is prime, is divisible between 1 and her self'
+        msgFalse1 = '\nThis number hasn\'t prime because is divisible more than 1 and her self'
+        msgFalse2 = 'Numbers that is divisible:'
+        valToDiv = 1
+        steps = 0
+
+        self.division()
+        N = int(input('Digit the value that you wish know if it is a number prime:\n'))
+
+        while valToDiv <= N:
+            result = N % valToDiv
+            valToDiv += 1
+
+            if result == 0:
+                steps += 1
+                continue
+            notPrimes.append(valToDiv)
+
+        if steps == 2:
+            return print(ColorsStatus.OKGREEN + msgTrue + ColorsStatus.ENDC)
+
+        print(ColorsStatus.FAIL + msgFalse1 + ColorsStatus.ENDC)
+        print(ColorsStatus.FAIL + msgFalse2 + ColorsStatus.ENDC)
+        return print(ColorsStatus.FAIL + notPrimes.__str__() + ColorsStatus.ENDC)
 
     # seventy exercise
     def ex7(self):
